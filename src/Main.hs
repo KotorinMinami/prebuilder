@@ -25,6 +25,7 @@ import Rules.LibHangul
 import Rules.LibIME
 import Rules.LibIMEJyutping
 import Rules.LibIntlLite
+import Rules.LibMozc
 import Rules.LibRime
 import Rules.LibThai
 import Rules.Lua
@@ -70,6 +71,7 @@ main = do
       libthaiRule
       libiconvRule
       anthyDictRule
+      libmozcRule
       isInGitHubActionRule
       getOutputDirRule
       "everything" ~> do
@@ -88,6 +90,7 @@ main = do
                 "yaml-cpp",
                 "leveldb",
                 "marisa",
+                "libmozc",
                 "librime",
                 "libhangul",
                 "chewing-dict",

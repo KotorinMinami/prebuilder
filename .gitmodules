@@ -65,3 +65,6 @@
 [submodule "fcitx5"]
 	path = fcitx5
 	url = https://github.com/fcitx/fcitx5
+[submodule "fcitx5-mozc"]
+	path = fcitx5-mozc
+	url = https://github.com/fcitx-contrib/fcitx5-mozc

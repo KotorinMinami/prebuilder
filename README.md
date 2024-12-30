@@ -44,3 +44,4 @@ both can be installed with `sdkmanager` command line tool.
 * libchewing: [chewing/libchewing](https://github.com/chewing/libchewing)
 * libthai: [tlwg/libthai](https://github.com/tlwg/libthai)
 * libiconv: [GNU/libiconv](https://savannah.gnu.org/projects/libiconv)
+* mozc: [google/mozc](https://github.com/google/mozc)

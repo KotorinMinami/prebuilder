@@ -53,6 +53,17 @@ jobs:
         with:
           packages: "ndk;${{ env.NDK_VERSION }} cmake;${{ env.CMAKE_VERSION }}"
 
+      - name: Patch fcitx5 log.cpp for fmt 10+
+        run: |
+          FILE_PATH="/__w/prebuilder/prebuilder/fcitx5/src/lib/fcitx-utils/log.cpp"
+          
+          if [ -f "$FILE_PATH" ]; then
+            echo "Patching $FILE_PATH..."
+            sed -i 's/auto t = fmt::localtime(std::chrono::system_clock::to_time_t(now));/time_t tt = std::chrono::system_clock::to_time_t(now); auto t = *std::localtime(\&tt);/' "$FILE_PATH"
+          else
+            echo "File not found: $FILE_PATH, skipping patch."
+          fi
+
       - name: Build mozc_data.inc
         run: |
           git apply --directory=libmozc/mozc/src/third_party/protobuf libmozc/patches/protobuf.patch

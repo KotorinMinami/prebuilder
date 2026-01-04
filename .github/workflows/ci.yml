@@ -67,7 +67,7 @@ jobs:
         run: |
           # use archlinux's dynamic only ghc
           cabal configure --disable-library-vanilla --enable-shared --enable-executable-dynamic --ghc-options=-dynamic
-          ./build-cabal -j2 everything
+          ./build-cabal everything
 
       - name: Pack prebuilt libraries
         if: github.event_name == 'pull_request'
